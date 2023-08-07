@@ -1,10 +1,17 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore, ThunkAction, Action,getDefaultMiddleware } from '@reduxjs/toolkit';
+
+import activeNoteSlice from '../redux/NotesSlice';
+import notesSlice from '../redux/NotesSlice';
+
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    active: notesSlice
   },
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
+
 });
 
 export type AppDispatch = typeof store.dispatch;

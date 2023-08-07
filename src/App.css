@@ -37,3 +37,7 @@
     transform: translateY(0px);
   }
 }
+body{
+  background-color: #343a40!important;
+  height: 100vh;
+}
